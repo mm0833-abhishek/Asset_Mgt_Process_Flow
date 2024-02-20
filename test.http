@@ -1,0 +1,65 @@
+GET http://localhost:4004/odata/v4/catalog/Request 
+###
+
+GET  http://localhost:4004/odata/v4/catalog/Request?$expand=quotations
+###
+
+POST http://localhost:4004/odata/v4/catalog/Request 
+Content-Type: application/json
+
+{
+  "hrID": "MM001",
+  "product": "Laptop",
+  "status": "Progress with TL1"
+}
+
+
+###
+
+PATCH http://localhost:4004/odata/v4/catalog/Request/084bce71-1fae-47e3-810e-b31eeac8186e
+Content-Type: application/json
+
+{
+  "parentRequestID": "3261ae84-e755-4c24-afa2-be0151983587"
+}
+###
+
+DELETE  http://localhost:4004/odata/v4/catalog/Request/9cb5bc9e-712d-45d7-a786-f5fe08e36d39
+
+###
+
+####### For Quotation Table
+GET http://localhost:4004/odata/v4/catalog/Quotation
+###
+
+
+POST http://localhost:4004/odata/v4/catalog/Quotation 
+Content-Type: application/json
+
+{
+
+  "quotationDescription": "Flipkart with 5 yrs warrenty",
+  "quotationPrice": "12,000",
+  "status" :"false",
+  "parentRequestID":"c3141c5e-b27a-4d8f-a18d-28ef88a98a21"
+}
+
+###
+
+
+
+
+
+
+
+### ParentRequestGenerate
+
+GET http://localhost:4004/odata/v4/catalog/ParentRequestGenerate(id={'fd705683-a702-4301-bfcd-9bdbe921c282','c3141c5e-b27a-4d8f-a18d-28ef88a98a21'})
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/ParentRequestGenerate?$filter=id eq 'fd705683-a702-4301-bfcd-9bdbe921c282' or id eq 'c3141c5e-b27a-4d8f-a18d-28ef88a98a21'
+
+ 
+
+

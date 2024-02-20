@@ -1,0 +1,26 @@
+<!-- <mvc:View controllerName="assetmgtui.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>hrTitle}">
+        <content >
+            <Button text="Create Request" press="onPress" />
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+
+
+
+<mvc:View controllerName="assetmgtui.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>hrTitle}">
+        <FlexBox justifyContent="Center" height="100%">
+            <Button text="Create Request" press="onPress" />
+        </FlexBox>
+    </Page>
+</mvc:View>
+				
+				
+  

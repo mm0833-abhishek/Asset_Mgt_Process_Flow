@@ -1,0 +1,10 @@
+<mvc:View controllerName="assetmgtui.controller.HR"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>hrTitle}">
+        <FlexBox justifyContent="Center" height="100%">
+            <Button text="Create Requesttttttt" press="onPress" />
+        </FlexBox>
+    </Page>
+</mvc:View>
+				
