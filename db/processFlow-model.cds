@@ -12,7 +12,7 @@ entity Request {
   key hrRequestID : UUID;
   requestCreationDate: DateTime default CURRENT_TIMESTAMP;
   hrID  : String;
-  product  : String;
+  item  : String;
   status: String;
   parentRequestID: UUID;
   quotations: Association to many Quotation on quotations.parentRequestID = $self.parentRequestID;

@@ -1,0 +1,91 @@
+<!-- <core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="createHrRequestDialog"
+        title="Create New Request"
+        class="sapUiPopupWithPadding"
+    >
+        <VBox>
+
+            <Label text="First Name" />
+            <Input
+                id="empFirstName"
+                value="{employeeModel>/Employee_First_Name}"
+                type="Text"
+            />
+
+            <Label text="Last Name" />
+            <Input
+                id="empLastName"
+                value="{employeeModel>/Employee_Last_Name}"
+                type="Text"
+            />
+
+            <Label text="Phone Number" />
+            <Input
+                id="empPhoneNumber"
+                value="{employeeModel>/Employee_Phone_Number}"
+                type="Text"
+            />
+
+            <Label text="Department ID" />
+            <Input
+                id="empDepartmentId"
+                value="{employeeModel>/Employee_Department_ID}"
+                type="Text"
+                showValueHelp="true"
+                valueHelpRequest="onEmployeeDepartmentValueHelp"
+            >
+                <suggestionItems>
+                    <core:ListItem
+                        key="{oDaModel>Department_Id}"
+                        text="{
+						path : 'oDaModel>Department_Id'
+						
+					}"
+                        additionalText="{
+						path : 'oDaModel>Department_Id'
+						
+					}"
+                    />
+                </suggestionItems>
+            </Input>
+        </VBox>
+
+        <beginButton>
+            <Button
+                text="Add"
+                press="onAddEmployee"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                text="Cancel"
+                press="onCancelAddEmployee"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition> -->
+
+
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="createHrRequestDialog" title="Create New Request" class="sapUiPopupWithPadding">
+        <VBox>
+            <Select id="itemTypeSelect" selectedKey="{createHrRequestModel>/item}">
+                <core:Item key="Laptop" text="Laptop" />
+                <!-- <core:Item key="keyboard" text="Keyboard" /> -->
+            </Select>
+        </VBox>
+        <beginButton>
+            <Button text="Add" press="onAddCreateHrRequest" />
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="onCancelCreateHrRequest" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
+
