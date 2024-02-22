@@ -1,0 +1,12 @@
+<mvc:View controllerName="assetmgtui.controller.TL1RaisedRequests"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   
+    <Page >
+    <Text text="inside raised ticket"></Text>
+            
+    </Page>
+    
+   
+</mvc:View>

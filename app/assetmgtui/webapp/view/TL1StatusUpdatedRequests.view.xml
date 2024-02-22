@@ -1,0 +1,12 @@
+<mvc:View controllerName="assetmgtui.controller.TL1StatusUpdatedRequests"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   
+    <Page >
+    <Text text="inside Status updated request"></Text>
+            
+    </Page>
+    
+   
+</mvc:View>

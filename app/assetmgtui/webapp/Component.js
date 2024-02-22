@@ -33,3 +33,47 @@ sap.ui.define([
         });
     }
 );
+
+
+
+// sap.ui.define([
+//     "sap/ui/core/UIComponent",
+//     "sap/ui/Device",
+//     "assetmgtui/model/models"
+// ], function(UIComponent, Device, models) {
+//     "use strict";
+
+//     return UIComponent.extend("assetmgtui.Component", {
+//         metadata: {
+//             manifest: "json"
+//         },
+
+//         init: function() {
+//             // Call the init function of the parent
+//             UIComponent.prototype.init.apply(this, arguments);
+
+//             // Create the router
+//             this.getRouter().initialize();
+//         },
+
+//         // Configure routing
+//         createContent: function() {
+//             // create a new root view with a given name
+//             var oView = sap.ui.view({
+//                 id: "app",
+//                 viewName: "assetmgtui.view.App",
+//                 type: "XML",
+//                 viewData: {
+//                     component: this
+//                 }
+//             });
+
+//             // Set the model
+//             var oModel = models.createDeviceModel();
+//             oView.setModel(oModel, "device");
+
+//             // Set the root view
+//             return oView;
+//         }
+//     });
+// });

@@ -1,0 +1,277 @@
+<!-- <mvc:View controllerName="assetmgtui.controller.TL1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>hrTitle}">
+        <headerContent>
+            <Button id="createHrRequestButton" icon="sap-icon://create-form" tooltip="Create Request" press="onCreateHrRequest" />
+        </headerContent>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <content>
+            <Button text="Create Request" press="createHRRequest" /> 
+				
+            <Table items="{hrRequestsModel>/}" class="hover-table" headerText="RequestList">
+                   <headerToolbar>
+        <Toolbar>
+            <Title text="RequestList" textAlign="Center"/>
+        </Toolbar>
+    </headerToolbar> 
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="Request Generation Date"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Request ID"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Item"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Status"></Label>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Inherit">
+                        <cells>
+                            <Text text="{hrRequestsModel>requestCreationDate}"/>
+                            <Text text="{hrRequestsModel>hrRequestID}"/>
+                            <Text text="{hrRequestsModel>item}"/>
+                              <ObjectStatus
+                                text="{hrRequestsModel>status}"
+                                state="{= ${hrRequestsModel>status} === 'Success' ? 'Success' : ${hrRequestsModel>status} === 'Cancel' ? 'Error' : 'Warning' }" />
+
+                            <ObjectStatus
+                                class="sapUiSmallMarginBottom"
+                                text="{hrRequestsModel>status} - from absisek"
+                                state="{path: 'hrRequestsModel>status',
+                                        formatter: '.formatter.statusText'}" />
+
+
+
+                            <Text text="{hrRequestsModel>status}"  /> 
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+
+<!-- 
+<mvc:View controllerName="companyui.controller.TL1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="Employees" showNavButton="true" navButtonPress="onNavBack">
+
+        <headerContent>
+            <Button id="addEmployeeButton" icon="sap-icon://add-employee" tooltip="Add Employee" press="onAddEmp" />
+        </headerContent>
+        <List
+            id="HrRequestsList"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            growing="true"
+            growingThreshold="5"
+            items="{
+                path: 'hrRequestsModel>/'
+            }">
+
+            <headerToolbar>
+                <Toolbar>
+                    <Label id="tableHeader" text="HR Request List"/>
+                    <ToolbarSpacer />
+                    <SearchField id="searchField" width="auto" search="onSearchEmployee" />
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    title="{hrRequestsModel>item}"
+                    type="Navigation"
+                    press="onSelect">
+                    <ObjectAttribute text="{hrRequestsModel>hrRequestID}" />
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>
+ -->
+
+
+
+<!-- <mvc:View controllerName="assetmgtui.controller.TL1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="Welcome Team Lead 1">
+        <content >
+            <Button text="Create Request" press="onPress" />
+        </content>
+    </Page>
+</mvc:View> -->
+
+
+
+
+
+<!-- 
+<mvc:View  controllerName="assetmgtui.controller.TL1Home"
+		   xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.uxap"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   xmlns:goals="sap.uxap.sample.SharedBlocks.goals"
+		   xmlns:personal="sap.uxap.sample.SharedBlocks.personal"
+		   xmlns:employment="sap.uxap.sample.SharedBlocks.employment"
+		   xmlns:connections="sap.uxap.sample.SharedBlocks.connections"
+		   height="100%">
+	<ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true"
+		beforeNavigate="onBeforeNavigate"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false"
+		sectionChange="onSectionChange">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+			    
+				<expandedHeading>
+					<m:Title text="Welcome TL1" wrapping="true"/>
+				</expandedHeading>
+
+				<actions>
+					<m:Button text="Create Request" type="Emphasized" press="onEdit"/>
+					
+				</actions>
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+
+		<headerContent>
+			<m:SearchField width="12rem" placeholder="Search" search="onSearch"/>
+		</headerContent>
+
+
+		<sections>
+			<ObjectPageSection titleUppercase="false" id="hrRequests" title="HR Requests">
+			<subSections>
+				<ObjectPageSubSection id="goalsSS1" titleUppercase="false">
+					<blocks>
+						<goals:GoalsBlock id="goalsblock"/>
+					</blocks>
+				</ObjectPageSubSection>
+			</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="raisedRequests" title="Raised Requests">
+				<subSections>
+					<ObjectPageSubSection id="personalSS1" title="Connect" titleUppercase="false">
+						<blocks>
+							<personal:BlockPhoneNumber id="phone"/>
+							<personal:BlockSocial id="social"/>
+							<personal:BlockAdresses id="adresses"/>
+							<personal:BlockMailing id="mailing" columnLayout="1"/>
+						</blocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="personalSS2" title="Payment information" titleUppercase="false">
+						<blocks>
+							<personal:PersonalBlockPart1 id="part1" columnLayout="1"/>
+						</blocks>
+						<moreBlocks>
+							<personal:PersonalBlockPart2 id="part2" columnLayout="1"/>
+						</moreBlocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" id="employment" title="Employment">
+				<subSections>
+					<ObjectPageSubSection id="employmentSS1" title="Job information" titleUppercase="false">
+						<blocks>
+							<employment:BlockJobInfoPart1 id="jobinfopart1"/>
+							<employment:BlockJobInfoPart2 id="jobinfopart2"/>
+							<employment:BlockJobInfoPart3 id="jobinfopart3"/>
+						</blocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="employmentSS2" title="Employee Details" titleUppercase="false">
+						<blocks>
+							<employment:BlockEmpDetailPart1 id="empdetailpart1" columnLayout="1"/>
+						</blocks>
+						<moreBlocks>
+							<employment:BlockEmpDetailPart2 id="empdetailpart2" columnLayout="1"/>
+							<employment:BlockEmpDetailPart3 id="empdetailpart3" columnLayout="1"/>
+						</moreBlocks>
+					</ObjectPageSubSection>
+
+					<ObjectPageSubSection id="employmentSS3" title="Job Relationship" titleUppercase="false">
+						<blocks>
+							<employment:EmploymentBlockJob id="employmentblockjob" showSubSectionMore="true">
+								<employment:mappings>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp1"
+												  externalPath="/Employee/0"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp2"
+												  externalPath="/Employee/1"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp3"
+												  externalPath="/Employee/2"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp4"
+												  externalPath="/Employee/3"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp5"
+												  externalPath="/Employee/4"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp6"
+												  externalPath="/Employee/5"/>
+								</employment:mappings>
+							</employment:EmploymentBlockJob>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" id="connections" title="Connections">
+				<subSections>
+					<ObjectPageSubSection id="connectionsSS1" titleUppercase="false">
+						<blocks>
+							<connections:ConnectionsBlock id="connectionsblock">
+								<connections:mappings>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp1"
+												  externalPath="/Employee/0"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp2"
+												  externalPath="/Employee/1"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp3"
+												  externalPath="/Employee/2"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp4"
+												  externalPath="/Employee/3"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp5"
+												  externalPath="/Employee/4"/>
+									<ModelMapping externalModelName="ObjectPageModel" internalModelName="emp6"
+												  externalPath="/Employee/5"/>
+								</connections:mappings>
+							</connections:ConnectionsBlock>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View> -->
+
+
+
+<mvc:View controllerName="assetmgtui.controller.TL1Home" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <HBox alignItems="Center" justifyContent="Center">
+        <Button text="HR Request" press="onHRRequestsPress" id="onHRRequestsPress"/>
+        <Button text="Raised Req" press="onRaisedRequestsPress"/>
+        <Button text="Finance Request" press="onFinanceResponcesPress"/>
+        <Button text="Succ/Rej Request" press="onStatusUpdatedRequestsPress"/>
+    </HBox>
+</mvc:View>

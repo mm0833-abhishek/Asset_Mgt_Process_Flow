@@ -149,6 +149,76 @@
 
 
 
+<!-- 
+<mvc:View controllerName="assetmgtui.controller.HR"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>hrTitle}">
+        <headerContent>
+            <Button id="createHrRequestButton" icon="sap-icon://create-form" tooltip="Create Request" press="onCreateHrRequest" />
+        </headerContent>
+        <ToolbarSpacer/>
+        <ToolbarSpacer/>
+        <content>
+             <Button text="Create Request" press="createHRRequest" /> 
+				
+            <Table items="{hrRequestsModel>/}" class="hover-table" headerText="RequestList">
+                  <headerToolbar>
+        <Toolbar>
+            <Title text="RequestList" textAlign="Center"/>
+        </Toolbar>
+    </headerToolbar> 
+                <columns>
+                    <Column>
+                        <header>
+                            <Label text="Request Generation Date"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Request ID"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Item"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Status"></Label>
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Inherit">
+                        <cells>
+                            <Text text="{hrRequestsModel>requestCreationDate}"/>
+                            <Text text="{hrRequestsModel>hrRequestID}"/>
+                            <Text text="{hrRequestsModel>item}"/>
+                              <ObjectStatus
+                                text="{hrRequestsModel>status}"
+                                state="{= ${hrRequestsModel>status} === 'Success' ? 'Success' : ${hrRequestsModel>status} === 'Cancel' ? 'Error' : 'Warning' }" />
+
+                             <ObjectStatus
+                                class="sapUiSmallMarginBottom"
+                                text="{hrRequestsModel>status} - from absisek"
+                                state="{path: 'hrRequestsModel>status',
+                                        formatter: '.formatter.statusText'}" /> 
+
+
+
+                          <Text text="{hrRequestsModel>status}"  /> 
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View> -->
+
+
 
 <mvc:View controllerName="assetmgtui.controller.HR"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
@@ -200,6 +270,14 @@
                                 text="{hrRequestsModel>status}"
                                 state="{= ${hrRequestsModel>status} === 'Success' ? 'Success' : ${hrRequestsModel>status} === 'Cancel' ? 'Error' : 'Warning' }" />
 
+
+                                <!-- <ObjectStatus
+    text="{hrRequestsModel>status}"
+    state="{
+        parts: [{path: 'hrRequestsModel>status'}],
+        formatter: '.formatter.getStatusState'
+    }" /> -->
+
                             <!-- <ObjectStatus
                                 class="sapUiSmallMarginBottom"
                                 text="{hrRequestsModel>status} - from absisek"
@@ -215,5 +293,13 @@
                 </items>
             </Table>
         </content>
+        <footer>
+            <Bar design="Footer">
+                <contentRight>
+                    <Button text="Route to TL1" press="handleNavigation"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>
+

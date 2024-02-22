@@ -1,0 +1,34 @@
+<mvc:View controllerName="assetmgtui.controller.TL1HrRequests"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="HR Requests" showNavButton="true" navButtonPress="onNavBack">
+
+
+        <List
+            id="EmployeesList"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            growing="true"
+            growingThreshold="5"
+            items="{
+                path: 'hrRequestsModel>/'
+            }">
+
+            <headerToolbar>
+                <Toolbar>
+                    <Label id="tableHeader" text="Employees List"/>
+                    <ToolbarSpacer />
+                    <SearchField id="searchField" width="auto" search="onSearchEmployee" />
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    title="{hrRequestsModel>item}"
+                    type="Navigation"
+                    press="onSelect">
+                    <ObjectAttribute text="{hrRequestsModel>hrRequestID}" />
+                </ObjectListItem>
+            </items>
+        </List>
+    </Page>
+</mvc:View>

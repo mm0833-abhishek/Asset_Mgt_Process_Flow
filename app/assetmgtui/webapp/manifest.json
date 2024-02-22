@@ -103,6 +103,31 @@
           "target": [
             "TargetHR"
           ]
+        },
+        {
+          "name": "TL1Home",
+          "pattern": "TL1Home",
+          "target": ["TargetTL1Home"]
+        },
+        {
+          "name": "TL1HrRequests",
+          "pattern": "TL1HrRequests",
+          "target": ["TargetTL1HrRequests"]
+        },
+        {
+          "name": "TL1RaisedRequests",
+          "pattern": "TL1RaisedRequests",
+          "target": ["TargetTL1RaisedRequests"]
+        },
+        {
+          "name": "TL1FinanceResponces",
+          "pattern": "TL1FinanceResponces",
+          "target": ["TargetTL1FinanceResponces"]
+        },
+        {
+          "name": "TL1StatusUpdatedRequests",
+          "pattern": "TL1StatusUpdatedRequests",
+          "target": ["TargetTL1StatusUpdatedRequests"]
         }
       ],
       "targets": {
@@ -112,6 +137,42 @@
           "clearControlAggregation": false,
           "viewId": "HR",
           "viewName": "HR"
+        },
+        "TargetTL1Home": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TL1Home",
+          "viewName": "TL1Home"
+        },
+        "TargetTL1HrRequests": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TL1HrRequests",
+          "viewName": "TL1HrRequests"
+        },
+        
+        "TargetTL1RaisedRequests": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TL1RaisedRequests",
+          "viewName": "TL1RaisedRequests"
+        },
+        "TargetTL1FinanceResponces": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TL1FinanceResponces",
+          "viewName": "TL1FinanceResponces"
+        },
+        "TargetTL1StatusUpdatedRequests": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "TL1StatusUpdatedRequests",
+          "viewName": "TL1StatusUpdatedRequests"
         }
       }
     },
