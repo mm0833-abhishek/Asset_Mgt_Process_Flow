@@ -1,12 +1,34 @@
 <mvc:View controllerName="assetmgtui.controller.TL1RaisedRequests"
-    xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
     xmlns="sap.m">
-   
-    <Page >
-    <Text text="inside raised ticket"></Text>
-            
-    </Page>
-    
-   
+    <!-- <Page id="page" title="HR Requests" showNavButton="true" navButtonPress="onNavBack"> -->
+
+
+        <List
+            id="EmployeesList"
+            class="sapUiResponsiveMargin"
+            width="auto"
+            growing="true"
+            growingThreshold="5"
+            items="{
+                path: 'tl1RequestsModel>/'
+            }">
+
+            <headerToolbar>
+                <Toolbar>
+                    <Label id="tableHeader" text="Team Lead 1 Requests"/>
+                    <ToolbarSpacer />
+                    <SearchField id="searchField" width="auto" search="onSearchEmployee" />
+                </Toolbar>
+            </headerToolbar>
+            <items>
+                <ObjectListItem
+                    title="{tl1RequestsModel>item}"
+                    type="Navigation"
+                    press="onSelect">
+                    <ObjectAttribute text="{tl1RequestsModel>parentRequestID}" />
+                </ObjectListItem>
+            </items>
+        </List>
+    <!-- </Page> -->
 </mvc:View>

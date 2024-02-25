@@ -68,7 +68,7 @@
           "bundleName": "assetmgtui.i18n.i18n"
         }
       },
-      "": {
+      "oDaModel": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {

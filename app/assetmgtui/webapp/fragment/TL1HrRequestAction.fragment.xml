@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog
+      id="tl1HrRequestsAction"
+      title="HR Request Details"
+      beginButton="{cancelButton}">
+      <VBox class="sapUiSmallMargin">
+         <FlexBox alignItems="Center" justifyContent="">
+            <VBox>
+               <Text text="{= 'Item: ' + ${tl1ParticularHrRequestModel>/item}}" class="sapTitle" wrapping="true"/>
+               <Text text="{= 'HR Request ID: ' + ${tl1ParticularHrRequestModel>/hrRequestID}}" class="sapSubtitle" wrapping="true"/>
+               <Text text="{= 'HR ID: ' + ${tl1ParticularHrRequestModel>/hrID}}" class="sapSubtitle" wrapping="true"/>
+               <Text text="{= 'Request Creation Date: ' + ${tl1ParticularHrRequestModel>/requestCreationDate}}" class="sapSubtitle" wrapping="true"/>
+            </VBox>
+         </FlexBox>
+      </VBox>
+    
+
+      <FlexBox alignItems="Center" justifyContent="SpaceAround">
+         <Button text="Approve" type="Accept" press="onApprove"/>
+         <Button text="Reject" type="Reject" press="onReject"/>
+         <Button text="Cancel" press="onCloseFragment"/>
+    </FlexBox>
+      
+   </Dialog>
+</core:FragmentDefinition> 

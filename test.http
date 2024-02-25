@@ -16,11 +16,19 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:4004/odata/v4/catalog/Request/084bce71-1fae-47e3-810e-b31eeac8186e
+PUT http://localhost:4004/odata/v4/catalog/Request/084bce71-1fae-47e3-810e-b31eeac8186e
 Content-Type: application/json
 
 {
-  "parentRequestID": "3261ae84-e755-4c24-afa2-be0151983587"
+  "parentRequestID": "00000000-0000-0000-0000-000000000000"
+}
+###
+
+PATCH http://localhost:4004/odata/v4/catalog/Request/7917c190-97b1-47c2-8f81-cd913ba206ed
+Content-Type: application/json
+
+{
+  "status": "Not available"
 }
 ###
 

@@ -267,11 +267,102 @@
 
 
 
-<mvc:View controllerName="assetmgtui.controller.TL1Home" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<!-- <mvc:View controllerName="assetmgtui.controller.TL1Home" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
     <HBox alignItems="Center" justifyContent="Center">
         <Button text="HR Request" press="onHRRequestsPress" id="onHRRequestsPress"/>
         <Button text="Raised Req" press="onRaisedRequestsPress"/>
         <Button text="Finance Request" press="onFinanceResponcesPress"/>
         <Button text="Succ/Rej Request" press="onStatusUpdatedRequestsPress"/>
     </HBox>
+</mvc:View> -->
+
+
+
+
+<!-- =====================================================================================================================
+ -->
+
+
+
+
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.uxap"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   controllerName="assetmgtui.controller.TL1Home"
+		   height="100%">
+	<ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true"
+		beforeNavigate="onBeforeNavigate"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false"
+		sectionChange="onSectionChange">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+			    
+				<expandedHeading>
+					<m:Title text="Welcome TL1" wrapping="true"/>
+				</expandedHeading>
+
+				<actions>
+					<m:Button text="Create Request" type="Emphasized" press="onCreateTL1Request"/>
+					
+				</actions>
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+
+		<headerContent>
+			<m:SearchField width="12rem" placeholder="Search" search="onSearch"/>
+		</headerContent>
+
+
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="HR Requests">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>	
+							<mvc:XMLView viewName="assetmgtui.view.TL1HrRequests"/>
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+			</ObjectPageSection>
+
+
+			<ObjectPageSection titleUppercase="false"  title="Created Requests">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>
+							<mvc:XMLView viewName="assetmgtui.view.TL1RaisedRequests"/>
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>
+							<m:Text text="heloi"/>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+		<footer>       
+            <m:Bar>
+                <m:contentLeft>
+                    <m:Button text="Bottom Left Button" type="Default" press="onBottomLeftButtonPress"/>
+                </m:contentLeft>
+            </m:Bar>
+        </footer>
+        
+	</ObjectPageLayout>
 </mvc:View>
+
+
+
+ 

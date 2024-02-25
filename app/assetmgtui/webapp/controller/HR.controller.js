@@ -164,19 +164,19 @@ sap.ui.define([
     return Controller.extend("assetmgtui.controller.HR", {
         formatter: formatter,
         onInit: function () {
-            this.getView().setModel(new JSONModel(), "hrRequestsModel");
+        //    this.getView().setModel(new JSONModel(), "hrRequestsModel");
             this.getView().setModel(new JSONModel({
                 hrID:"HR345",
                 item:"Laptop",
-                status:"Progress",
-                parentRequestID:"fd705683-a702-4301-bfcd-9bdbe921c282"
+                status:"Progress with Team Lead 1",
+                parentRequestID:"00000000-0000-0000-0000-000000000000"
             }), "createHrRequestModel");
             
             this.fetchRequests();
         },
 
         fetchRequests: function () {
-            let url =this.getOwnerComponent().getModel().getServiceUrl() +"Request";
+            let url =this.getOwnerComponent().getModel("oDaModel").getServiceUrl() +"Request";
             var that = this;
             var hrID = "HR123"; // HR ID to filter requests
             $.ajax({
@@ -222,7 +222,7 @@ sap.ui.define([
         // HR.controller.js
 onAddCreateHrRequest: function () {
     var oNewHrRequestData = this.getView().getModel("createHrRequestModel").getData();
-    var url = this.getOwnerComponent().getModel().getServiceUrl() + "Request";
+    var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request";
   
     $.ajax({
         method: "POST",
@@ -231,6 +231,7 @@ onAddCreateHrRequest: function () {
         data: JSON.stringify(oNewHrRequestData),
         success: function () {
             MessageBox.success("New Request Added");
+            this.onCancelCreateHrRequest();
             // Trigger notification or popup for new HR request
             
         }.bind(this),
@@ -254,6 +255,10 @@ onAddCreateHrRequest: function () {
 //         }.bind(this)
 //     });
 // },
+
+
+
+
 
 
 

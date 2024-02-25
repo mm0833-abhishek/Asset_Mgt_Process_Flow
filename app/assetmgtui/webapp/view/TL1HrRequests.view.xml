@@ -1,7 +1,7 @@
 <mvc:View controllerName="assetmgtui.controller.TL1HrRequests"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
     xmlns="sap.m">
-    <Page id="page" title="HR Requests" showNavButton="true" navButtonPress="onNavBack">
+    <!-- <Page id="page" title="HR Requests" showNavButton="true" navButtonPress="onNavBack"> -->
 
 
         <List
@@ -16,7 +16,7 @@
 
             <headerToolbar>
                 <Toolbar>
-                    <Label id="tableHeader" text="Employees List"/>
+                    <Label id="tableHeader" text="HR Requests"/>
                     <ToolbarSpacer />
                     <SearchField id="searchField" width="auto" search="onSearchEmployee" />
                 </Toolbar>
@@ -30,5 +30,5 @@
                 </ObjectListItem>
             </items>
         </List>
-    </Page>
+    <!-- </Page> -->
 </mvc:View>
