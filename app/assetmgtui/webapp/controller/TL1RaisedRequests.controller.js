@@ -55,52 +55,6 @@ sap.ui.define([
     },
     
     
-    //   onSelect: function (oEvent) {
-    //       let parentReqID = oEvent.getSource().getBindingContext("tl1RequestsModel").getProperty("parentRequestID");
-    //       //this.fetchRequests(hrReqID);
-    //       console.log(parentReqID)
-
-    //       let url =this.getOwnerComponent().getModel("oDaModel").getServiceUrl() +"Request";
-    //       var that = this;
-    //       $.ajax({
-    //           url: url,      //   "/odata/v4/catalog/Request",
-    //           method: "GET",
-    //           dataType: "json",
-    //           // data: {
-    //           //     $filter: "parentRequestID eq '" + parentRequestID + "'"  // for string data
-    //           // },
-    //           data: {
-    //               $filter: "parentRequestID eq " + parentReqID   // for UUID data
-    //           },
-             
-    //           success: function (data) {
-    //               var jsonModel = new JSONModel(data);
-    //               that.getView().setModel(jsonModel, "tl1ParticularRequestModel");
-    //           },
-    //           error: function (jqXHR, textStatus, errorThrown) {
-    //               console.error("Error fetching HR requests:", errorThrown);
-    //           }
-    //       });
-      
-
-    //       if (!this.pDialog) {
-    //       //    console.log(this.getView().getId())
-    //           this.pDialog = Fragment.load({
-    //             id: this.getView().getId(),
-    //             name: "assetmgtui.fragment.TL1HrRequestsAction",
-    //             controller: this,
-    //           }).then(
-    //             function (oDialog) {
-    //               this.getView().addDependent(oDialog);
-    //               return oDialog;
-    //             }.bind(this) 
-    //           ); 
-    //       } 
-    //       this.pDialog.then((oDialog) => {
-    //           oDialog.open();
-    //       });
-          
-    //   },
 
 
 

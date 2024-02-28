@@ -1,0 +1,119 @@
+
+<!-- <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog
+      id="addQuotation"
+      title="Add Quotation">
+    <VBox>
+        <Table id="myTable" items="{path: '/rows'}">
+            <columns>
+                <Column>
+                    <Text text="Description" />
+                </Column>
+                <Column>
+                    <Text text="Price" />
+                </Column>
+                <Column width="40px"> 
+                        <Text text="" /> 
+                    </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input value="{description}" />
+                        <Input value="{price}" />
+                         <Button icon="sap-icon://delete" press="onRemoveRowPress" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+            <HBox>
+                <Button text="Add Row" press="onAddRowPress" />
+                <Button text="Submit" press="onSubmitPress" type="Accept" />
+                <Button text="Close" press="onClosePress" />
+            </HBox>
+    </VBox>
+      </Dialog>
+</core:FragmentDefinition> -->
+
+
+<!-- 
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog
+      id="addQuotation"
+      title="Add Quotation">
+    <VBox>
+        <Table id="myTable" items="{path: '/rows'}">
+            <columns>
+                <Column>
+                    <Text text="Description" />
+                </Column>
+                <Column>
+                    <Text text="Price" />
+                </Column>
+                <Column width="40px"> 
+                        <Text text="" /> 
+                    </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input value="{description}" />
+                        <Input value="{price}" />
+                         <Button icon="sap-icon://delete" press="onRemoveRowPress" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+            <HBox>
+                <Button text="Add Row" press="onAddRowPress" />
+                <Button text="Submit" press="onSubmitPress" type="Accept" />
+                <Button text="Close" press="onClosePress" />
+            </HBox>
+    </VBox>
+      </Dialog>
+</core:FragmentDefinition> -->
+
+
+
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="addQuotation"
+        title="Add Quotation">
+        <VBox>
+            <Text text="Parent Request ID: {tl1ParticularRequestModel>/value/0/parentRequestID}" id="parentRequestIdText" class="sapUiMeduimMargin"/>
+            <Table id="myTable" items="{path: '/rows'}">
+                <columns>
+                    <Column>
+                        <Text text="Description" />
+                    </Column>
+                    <Column>
+                        <Text text="Price" />
+                    </Column>
+                    <Column width="40px"> <!-- Adding a column for the Remove button -->
+                        <Text text="" /> <!-- Empty text to adjust alignment -->
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="{description}" />
+                            <Input value="{price}" />
+                            <Button icon="sap-icon://delete" press="onRemoveRowPress" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <HBox>
+                <Button text="Add Row" press="onAddRowPress" />
+                <Button text="Submit" press="onSubmitPress" type="Accept" />
+                <Button text="Close" press="onClosePress" />
+            </HBox>
+        </VBox>
+    </Dialog>
+</core:FragmentDefinition>
+
+
+
+
+

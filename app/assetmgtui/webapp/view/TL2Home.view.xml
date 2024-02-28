@@ -3,7 +3,7 @@
 		   xmlns="sap.uxap"
 		   xmlns:layout="sap.ui.layout"
 		   xmlns:m="sap.m"
-		   controllerName="assetmgtui.controller.TL1Home"
+		   controllerName="assetmgtui.controller.TL2Home"
 		   height="100%">
 	<ObjectPageLayout id="ObjectPageLayout"
 		enableLazyLoading="true"
@@ -16,7 +16,7 @@
 			<ObjectPageDynamicHeaderTitle>
 			    
 				<expandedHeading>
-					<m:Title text="Welcome TL1" wrapping="true"/>
+					<m:Title text="Welcome TL2" wrapping="true"/>
 				</expandedHeading>
 
 				<actions>
@@ -37,7 +37,7 @@
 		<headerContent>
 					            <m:Bar>
                 <m:contentRight>
-                    <m:Button text="Nav To TL2" type="Emphasized" press="NavToTL2"/>
+                    <m:Button text="Nav To TH" type="Emphasized" press="NavToTH"/>
                 </m:contentRight>
             </m:Bar>
 					
@@ -45,11 +45,11 @@
 
 
 		<sections>
-			<ObjectPageSection titleUppercase="false" title="HR Requests">
+			<ObjectPageSection titleUppercase="false" title="TL 1 Requests">
 				<subSections>
 					<ObjectPageSubSection  titleUppercase="false">
 						<blocks>	
-							<mvc:XMLView viewName="assetmgtui.view.TL1HrRequests"/>
+							<mvc:XMLView viewName="assetmgtui.view.TL2TL1Requests"/>
 						</blocks>
 					</ObjectPageSubSection>
 				
@@ -61,7 +61,7 @@
 				<subSections>
 					<ObjectPageSubSection  titleUppercase="false">
 						<blocks>
-							<mvc:XMLView viewName="assetmgtui.view.TL1RaisedRequests"/>
+							<mvc:XMLView viewName="assetmgtui.view.TL2RaisedRequests"/>
 						</blocks>
 					</ObjectPageSubSection>
 				
@@ -76,6 +76,18 @@
 				</subSections>
 			</ObjectPageSection>
 		</sections>
+
+
+		<ObjectPageSection titleUppercase="false" title="Process Flow">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>	
+							<mvc:XMLView viewName="assetmgtui.view.ProcessFlow"/>
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+			</ObjectPageSection>
 
         
 	</ObjectPageLayout>

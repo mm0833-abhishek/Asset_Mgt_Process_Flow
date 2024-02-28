@@ -4,7 +4,7 @@ GET http://localhost:4004/odata/v4/catalog/Request
 GET  http://localhost:4004/odata/v4/catalog/Request?$expand=quotations
 ###
 
-POST http://localhost:4004/odata/v4/catalog/Request 
+POST http://localhost:4004/odata/v4/catalog/Request
 Content-Type: application/json
 
 {
@@ -29,6 +29,14 @@ Content-Type: application/json
 
 {
   "status": "Not available"
+}
+###
+
+PATCH http://localhost:4004/odata/v4/catalog/Request/090c799c-6c57-406f-b9e0-152c7a5ecf6a 
+Content-Type: application/json
+
+{
+  "parentRequestID": "10000000-0000-0000-0000-000000000000"
 }
 ###
 

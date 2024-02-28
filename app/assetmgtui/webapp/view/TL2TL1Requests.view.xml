@@ -1,32 +1,31 @@
-<mvc:View controllerName="assetmgtui.controller.TL1HrRequests"
+<mvc:View controllerName="assetmgtui.controller.TL2TL1Requests"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core"
     xmlns="sap.m">
     <!-- <Page id="page" title="HR Requests" showNavButton="true" navButtonPress="onNavBack"> -->
-
-
+<Button text="checking" press="checking"/>
         <List
-            id="HRRequestsList"
+            id="TL1RequestList"
             class="sapUiResponsiveMargin"
             width="auto"
             growing="true"
             growingThreshold="5"
             items="{
-                path: 'hrRequestsModel>/'
+                path: 'tl1RequestsModel>/'
             }">
 
             <headerToolbar>
                 <Toolbar>
-                    <Label id="tableHeader" text="HR Requests"/>
+                    <Label id="tableHeader" text="Team Lead 1 Requests"/>
                     <ToolbarSpacer />
                     <SearchField id="searchField" width="auto" search="onSearchEmployee" />
                 </Toolbar>
             </headerToolbar>
             <items>
                 <ObjectListItem
-                    title="{hrRequestsModel>item}"
+                    title="{tl1RequestsModel>item}"
                     type="Navigation"
                     press="onSelect">
-                    <ObjectAttribute text="{hrRequestsModel>hrRequestID}" />
+                    <ObjectAttribute text="{tl1RequestsModel>parentRequestID}" />
                 </ObjectListItem>
             </items>
         </List>

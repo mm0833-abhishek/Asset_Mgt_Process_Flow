@@ -12,7 +12,28 @@ sap.ui.define([
 
         return UIComponent.extend("assetmgtui.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                // dependencies: {
+                //     libs: [
+                //         "sap.m",
+                //         "sap.ui.layout",
+                //         "sap.ui.core",
+                //         "sap.suite.ui.commons"
+                //     ]
+                // },
+                // config: {
+                //     sample: {
+                //         files: [
+                //             "ProcessFlow.view.xml",
+                //             "ProcessFlow.controller.js",
+                //             "ProcessFlowLanesAndNodes.json",
+                //             "ProcessFlowLanesOnly.json",
+                //             "ProcessFlowNodes.json",
+                //             "ProcessFlowNodesHighlightedNodes.json",
+                //             "ProcessFlowUpdateModel.json"
+                //         ]
+                //     }
+                // }
             },
 
             /**

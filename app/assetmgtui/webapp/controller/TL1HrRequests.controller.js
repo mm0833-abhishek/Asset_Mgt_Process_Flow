@@ -119,12 +119,12 @@ sap.ui.define([
 
 
         onApprove: function(){
-            this.RequestStatusUpdate('Success');
+            this.RequestStatusUpdate('Approved by TeamLead 1');
         },
 
 
         onReject: function(){
-            this.RequestStatusUpdate('Rejected');
+            this.RequestStatusUpdate('Rejected by TeamLead 1');
         },
 
         onCloseFragment: function () {

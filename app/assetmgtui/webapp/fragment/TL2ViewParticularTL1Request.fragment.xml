@@ -1,0 +1,35 @@
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog
+      id="tl2tl1RequestsAction"
+      title="Update HR Requests">
+      <VBox class="sapUiTinyMargin">
+         <FlexBox alignItems="Center" justifyContent="SpaceBetween">
+            <VBox>
+               <Text text="Request ID: {tl1ParticularRequestModel>/value/0/parentRequestID}"
+                  id="requestIdText"
+                  class="sapTitle"
+                  wrapping="true"/>
+               <Text text="{= 'Status: ' + ${tl1ParticularRequestModel>/value/0/status}}"
+                  class="sapSubtitle"
+                  wrapping="true"/>
+            </VBox>
+         </FlexBox>
+         <List
+            growing="true"
+            growingThreshold="10"
+            items="{path: 'tl1ParticularRequestModel>/value', filters: {path: 'hrRequestID'}}">
+            <StandardListItem
+               title="{tl1ParticularRequestModel>item}"
+               description="{tl1ParticularRequestModel>hrRequestID}"
+               type="Active"
+               press="onItemPress"/>
+         </List>
+      </VBox>
+      <HBox justifyContent="Center">
+         <Button text="Add Quotataion" type="Accept" press="openCreateQuotations" class="sapUiSmallMarginEnd"/>
+         <Button text="Reject" type="Reject" press="onRejectPress" class="sapUiSmallMarginEnd"/>
+         <Button text="Close" type="Default" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+      </HBox>
+   </Dialog>
+</core:FragmentDefinition>

@@ -77,7 +77,12 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
+      },
+      "dataModel":{
+        "uri":"model/dataModel",
+        "type":"sap.ui.model.json.JSONModel"
       }
+
     },
     "resources": {
       "css": [
@@ -110,9 +115,9 @@
           "target": ["TargetTL1Home"]
         },
         {
-          "name": "TL1HrRequests",
-          "pattern": "TL1HrRequests",
-          "target": ["TargetTL1HrRequests"]
+          "name": "TL2Home",
+          "pattern": "TL2Home",
+          "target": ["TargetTL2Home"]
         },
         {
           "name": "TL1RaisedRequests",
@@ -145,12 +150,12 @@
           "viewId": "TL1Home",
           "viewName": "TL1Home"
         },
-        "TargetTL1HrRequests": {
+        "TargetTL2Home": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "TL1HrRequests",
-          "viewName": "TL1HrRequests"
+          "viewId": "TL2Home",
+          "viewName": "TL2Home"
         },
         
         "TargetTL1RaisedRequests": {
