@@ -1,49 +1,13 @@
 {
 	"nodes": [
 		 {
-			"id": "10",
-			"lane": "0",
-			"title": "Outbound Delivery 40",
-			"titleAbbreviation": "HR Request",
-			"children": [ 20 ],
-			"isTitleClickable": false,
-			"state": "Positive",
-			"stateText": "NOT OK",
-			"focused": false,
-			"highlighted": false,
-			"texts": [ "text 1", "text 2" ]
-		}, {
-			"id": "11",
-			"lane": "0",
-			"title": "Outbound Delivery 43",
-			"titleAbbreviation": "HR Request",
-			"children": [ 20 ],
-			"isTitleClickable": false,
-			"state": "Negative",
-			"stateText": null,
-			"focused": false,
-			"highlighted": false,
-			"texts": [ "text 1", "text 2" ]
-		}, {
-			"id": "12",
-			"lane": "0",
-			"title": "Outbound Delivery 45",
-			"titleAbbreviation": "HR Request",
-			"children": [ 20 ],
-			"isTitleClickable": false,
-			"state": "Positive",
-			"stateText": null,
-			"focused": false,
-			"highlighted": false,
-			"texts": null
-		}, {
 			"id": "20",
 			"lane": "1",
-			"title": "Invoice 9",
+			"title": "Laptop",
 			"titleAbbreviation": "Team Lead Request",
 			"children": [ 30],
 			"isTitleClickable": false,
-			"state": "Neutral",
+			"state": "Planned",
 			"stateText": "OK status",
 			"focused": false,
 			"highlighted": false,
@@ -51,7 +15,7 @@
 		},  {
 			"id": "30",
 			"lane": "2",
-			"title": "Accounting Document 5",
+			"title": "Laptop",
 			"titleAbbreviation": "AD 5",
 			"children": [ 40 ],
 			"isTitleClickable": false,
@@ -63,7 +27,7 @@
 		}, {
 			"id": "40",
 			"lane": "3",
-			"title": "Acceptance Letter 14",
+			"title": "Laptop",
 			"titleAbbreviation": "AL 14",
 			"children": [ 50 ],
 			"isTitleClickable": false,
@@ -75,7 +39,7 @@
 		}, {
 			"id": "50",
 			"lane": "4",
-			"title": "Credit Voucher 67",
+			"title": "Laptop",
 			"titleAbbreviation": "CV 67",
 			"children": null,
 			"isTitleClickable": false,
@@ -95,17 +59,17 @@
 		}, {
 			"id": "1",
 			"icon": "sap-icon://monitor-payments",
-			"label": "TL1",
+			"label": "Team Lead 1",
 			"position": 1
 		}, {
 			"id": "2",
-			"icon": "sap-icon://payment-approval",
-			"label": "TL2",
+			"icon": "sap-icon://collaborate",
+			"label": "Team Lead 2",
 			"position": 2
 		}, {
 			"id": "3",
 			"icon": "sap-icon://money-bills",
-			"label": "TH",
+			"label": "Team Head",
 			"position": 3
 		}, {
 			"id": "4",

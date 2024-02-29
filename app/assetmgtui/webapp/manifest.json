@@ -68,6 +68,14 @@
           "bundleName": "assetmgtui.i18n.i18n"
         }
       },
+      "dataModel":{
+        "uri":"model/dataModel.json",
+        "type":"sap.ui.model.json.JSONModel"
+      },
+      "locModel":{
+        "uri":"model/ProcessFlowLanesAndNodes.json",
+        "type":"sap.ui.model.json.JSONModel"
+      },
       "oDaModel": {
         "dataSource": "mainService",
         "preload": true,
@@ -77,10 +85,6 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      },
-      "dataModel":{
-        "uri":"model/dataModel",
-        "type":"sap.ui.model.json.JSONModel"
       }
 
     },

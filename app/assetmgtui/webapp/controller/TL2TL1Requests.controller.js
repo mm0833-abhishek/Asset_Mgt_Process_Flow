@@ -113,13 +113,13 @@ sap.ui.define([
   
         
         RequestStatusUpdate: function (statusToUpdate) {
-                let url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request";
+                let url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/";
                 var that = this;
                // var parentRequestID = '00000000-0000-0000-0000-000000000000'; // HR ID to filter requests
             
                 // Make an AJAX PATCH request to update the status
                 $.ajax({
-                    url: url + "(" + hrReqID + ")", // Append the hrReqID to the URL
+                    url: url +  hrReqID , // Append the hrReqID to the URL
                     method: "PATCH", // Use PATCH method to update the existing record
                     contentType: "application/json",
                     data: JSON.stringify({ status: statusToUpdate }), // Pass the new status in the request body
@@ -144,6 +144,7 @@ sap.ui.define([
                 let hrRequests=this.getView().getModel("dataModel").getProperty("/TL2TL1SelectedDatas");
                 var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/";
                 var that = this;
+                let flag=null
 
                 hrRequests.forEach(function(hrRequest) {
                 var request = {
@@ -157,16 +158,30 @@ sap.ui.define([
                     contentType: "application/json",
                     data: JSON.stringify(request),
                     success: function(data) {
+                        flag=true
                         console.log("Status updated to 'Rejected' for HR request with ID:", hrRequest.hrRequestID);
+                        
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
+                        flag=false;
                         console.error("Error updating status for HR request with ID:", hrRequest.hrRequestID, "Error:", errorThrown);
                     }
                 });
             });
-
-              that.onCloseFragment();    
-              that.fetchRequests();
+            setTimeout(()=>{
+                if(flag){
+                    MessageBox.success("Request Rejected");
+                    that.onCloseFragment();    
+                    that.fetchRequests();
+                }
+                else{
+                    console.log(flag)
+                    MessageBox.error("Something went wrong");
+                }
+            },1000)
+            
+            
+             
         },
             
         
@@ -193,9 +208,9 @@ sap.ui.define([
             this._oCreateQuotationDialog.then(function(oDialog) {
                 oDialog.open();
                 // Set the parentRequestID value in the fragment
-                oDialog.byId("parentRequestIdText").setText("Parent Request ID: " + sParentRequestID);
-                // Set font size
-                oDialog.byId("parentRequestIdText").addStyleClass("sapUiLargeMargin");
+                // oDialog.byId("parentRequestIdText").setText("Parent Request ID: " + sParentRequestID);
+                // // Set font size
+                // oDialog.byId("parentRequestIdText").addStyleClass("sapUiLargeMargin");
             });
         },
 

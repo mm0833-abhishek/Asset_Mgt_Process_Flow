@@ -112,9 +112,10 @@ onSaveTL1Requests: function(oEvent) {
 // Iterate through the data array and create an AJAX PATCH request for each item
 
 let url=this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/"
+let uniqueParentId=globalThis.crypto.randomUUID()
 aSelectedItems.forEach(function(item) {
     var hrRequestID = item.hrReq;
-    var parentReqID = globalThis.crypto.randomUUID()
+    var parentReqID = uniqueParentId
     let status='Progress with Team Lead 2'
     
 

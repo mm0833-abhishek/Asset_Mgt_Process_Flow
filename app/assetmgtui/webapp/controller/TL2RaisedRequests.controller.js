@@ -33,7 +33,7 @@ sap.ui.define([
               },
               success: function (data) {
                   var uniqueData = that.getUniqueRequests(data.value);
-                  console.log(data.value)
+                //  console.log(data.value)
                   var jsonModel = new sap.ui.model.json.JSONModel(uniqueData);
                   that.getView().setModel(jsonModel, "tl2RequestsModel");
               },
@@ -73,6 +73,7 @@ sap.ui.define([
                   $filter: "parentRequestID eq " + parentReqID
               },
               success: function(data) {
+                console.log(data.value)
                   var jsonModel = new JSONModel(data);
                   that.getView().setModel(jsonModel, "tl2ParticularRequestModel");
                   if (!that.pDialog) {
@@ -91,6 +92,7 @@ sap.ui.define([
               },
               error: function(jqXHR, textStatus, errorThrown) {
                   console.error("Error fetching HR requests:", errorThrown);
+                  console.log("inside the error block")
               }
           });
       },
