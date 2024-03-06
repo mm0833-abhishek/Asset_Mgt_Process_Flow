@@ -124,14 +124,14 @@
           "target": ["TargetTL2Home"]
         },
         {
-          "name": "TL1RaisedRequests",
-          "pattern": "TL1RaisedRequests",
-          "target": ["TargetTL1RaisedRequests"]
+          "name": "THHome",
+          "pattern": "THHome",
+          "target": ["TargetTHHome"]
         },
         {
-          "name": "TL1FinanceResponces",
-          "pattern": "TL1FinanceResponces",
-          "target": ["TargetTL1FinanceResponces"]
+          "name": "FinanceHome",
+          "pattern": "FinanceHome",
+          "target": ["TargetFinanceHome"]
         },
         {
           "name": "TL1StatusUpdatedRequests",
@@ -162,19 +162,19 @@
           "viewName": "TL2Home"
         },
         
-        "TargetTL1RaisedRequests": {
+        "TargetTHHome": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "TL1RaisedRequests",
-          "viewName": "TL1RaisedRequests"
+          "viewId": "THHome",
+          "viewName": "THHome"
         },
-        "TargetTL1FinanceResponces": {
+        "TargetFinanceHome": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "TL1FinanceResponces",
-          "viewName": "TL1FinanceResponces"
+          "viewId": "FinanceHome",
+          "viewName": "FinanceHome"
         },
         "TargetTL1StatusUpdatedRequests": {
           "viewType": "XML",

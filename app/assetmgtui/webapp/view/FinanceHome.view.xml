@@ -1,0 +1,87 @@
+
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+		   xmlns="sap.uxap"
+		   xmlns:layout="sap.ui.layout"
+		   xmlns:m="sap.m"
+		   controllerName="assetmgtui.controller.FinanceHome"
+		   height="100%">
+	<ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true"
+		beforeNavigate="onBeforeNavigate"
+		useIconTabBar="true"
+		showTitleInHeaderContent="true"
+		upperCaseAnchorBar="false"
+		sectionChange="onSectionChange">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+			    
+				<expandedHeading>
+					<m:Title text="Welcome Finance Team" wrapping="true"/>
+				</expandedHeading>
+
+
+				
+				
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+
+		<headerContent>
+			<m:SearchField width="12rem" placeholder="Search" search="onSearch"/>
+		</headerContent>
+
+		<!-- <headerContent>
+					            <m:Bar>
+                <m:contentRight>
+                    <m:Button text="Nav To Finance" type="Emphasized" press="Finance"/>
+                </m:contentRight>
+            </m:Bar>
+					
+		</headerContent> -->
+
+
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="TH Requests">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>	
+							<mvc:XMLView viewName="assetmgtui.view.FinanceTHRequests"/>
+                            
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+			</ObjectPageSection>
+
+
+			<ObjectPageSection titleUppercase="false"  title="Created Requests">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>
+							<mvc:XMLView viewName="assetmgtui.view.FinanceActions"/>
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+
+		<ObjectPageSection titleUppercase="false" title="Process Flow">
+				<subSections>
+					<ObjectPageSubSection  titleUppercase="false">
+						<blocks>	
+							<mvc:XMLView viewName="assetmgtui.view.ProcessFlow"/>
+						</blocks>
+					</ObjectPageSubSection>
+				
+				</subSections>
+			</ObjectPageSection>
+
+        
+	</ObjectPageLayout>
+</mvc:View>
+
+
+
+ 

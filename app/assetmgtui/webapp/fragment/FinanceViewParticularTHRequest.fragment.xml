@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog
+      id="thRequests"
+      title="TH Request Details"
+      >
+      <VBox class="sapUiSmallMargin">
+         <FlexBox alignItems="Center" >
+            <VBox>
+               <Text id="parentReqID" text="{= 'Request ID: ' + ${thParticularRequestModel>/parentRequestID}}" class="sapTitle" wrapping="true"/>
+               <Text text="{= 'item: ' + ${thParticularRequestModel>/item}}" class="sapSubtitle" wrapping="true"/>
+               <Text text="{= 'Description: ' + ${thParticularRequestModel>/quotationDescription}}" class="sapSubtitle" wrapping="true"/>
+               <Text text="{= 'Price:  $ ' + ${thParticularRequestModel>/quotationPrice}}" class="sapSubtitle" wrapping="true"/>
+           
+
+            </VBox>
+         </FlexBox>
+      </VBox>
+    
+
+      <FlexBox alignItems="Center" justifyContent="SpaceAround">
+         <Button text="Approve" type="Accept" press="onApprove"/>
+         <Button text="Reject" type="Reject" press="onRejectRequest"/>
+         <Button text="Cancel" press="onCloseFragment"/>
+    </FlexBox>
+      
+   </Dialog>
+</core:FragmentDefinition> 

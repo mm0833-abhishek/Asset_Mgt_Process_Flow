@@ -57,10 +57,6 @@ sap.ui.define([
               ); 
             }
             this.pDialog.then((oDialog) => {
-                oDialog.setBindingContext(
-                  this.getView().getModel("createHrRequestModel").createBindingContext(),
-                  "createHrRequestModel"
-                );
                 oDialog.open();
             });
         },

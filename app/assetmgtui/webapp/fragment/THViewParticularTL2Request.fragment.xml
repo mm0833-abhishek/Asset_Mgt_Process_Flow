@@ -1,0 +1,90 @@
+<!-- <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog
+      id="tl2Requests"
+      title="TL2 Requests">
+      <VBox class="sapUiTinyMargin">
+         <FlexBox alignItems="Center" justifyContent="SpaceBetween">
+            <VBox>
+               <Text text="Request ID: {tl2ParticularRequestModel>/value/0/parentRequestID}"
+                  class="sapTitle"
+                  wrapping="true"/>
+               <Text text="{= 'Status: ' + ${tl2RequestsModel>/0/status}}"
+                  class="sapSubtitle"
+                  wrapping="true"/>
+            </VBox>
+         </FlexBox>
+         <List
+            growing="true"
+            growingThreshold="10"
+            items="{path: 'tl2ParticularRequestModel>/value'}">
+            <StandardListItem
+               title="{tl2ParticularRequestModel>quotationPrice}"
+               description="{tl2ParticularRequestModel>quotationDescription}"
+               type="Active"
+               press="onItemPress"/>
+         </List>
+      </VBox>
+      <HBox justifyContent="Center">
+         <Button text="Confirm Quotation" type="Accept" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+         <Button text="Reject" type="Reject" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+         <Button text="Revert" type="Reject" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+         <Button text="Reject" type="Default" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+      </HBox>
+   </Dialog>
+</core:FragmentDefinition> -->
+
+
+
+
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+   <Dialog
+      id="tl2Requests"
+      title="Select Quotation"
+      >
+      <VBox class="sapUiTinyMargin">
+         <FlexBox alignItems="Center" justifyContent="SpaceBetween" >
+            <VBox>
+               <Text text="Request ID: {tl2ParticularRequestModel>/value/0/parentRequestID}"
+                  class="sapTitle"
+                  wrapping="true"/>
+               <Text text="{= 'Status: ' + ${tl2RequestsModel>/0/status}}"
+                  class="sapSubtitle"
+                  wrapping="true"/>
+            </VBox>
+         </FlexBox>
+         <!-- <List
+            growing="true"
+            growingThreshold="10"
+            items="{path: 'tl2ParticularRequestModel>/value'}"> -->
+            <Label text="Select Quotation:"/>
+         				<Select
+					id="selectingQuotation"
+					showSecondaryValues= "true"
+					items="{path: 'tl2ParticularRequestModel>/value'}"
+               width="500px">
+					<core:ListItem text="{tl2ParticularRequestModel>quotationDescription}" additionalText="{='$ '+${tl2ParticularRequestModel>quotationPrice}}"/>
+				</Select>
+         <!-- </List> -->
+
+
+      </VBox>
+      <HBox justifyContent="Center">
+         <Button text="Confirm Quotation" type="Accept" press="onConfirmQuotationPress" class="sapUiSmallMarginEnd"/>
+         <Button text="Reject" type="Reject" press="onRejectRequest" class="sapUiSmallMarginEnd"/>
+         <Button text="Revert back" type="Reject" press="onRevertRequest" class="sapUiSmallMarginEnd"/>
+         <Button text="close" type="Default" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
+      </HBox>
+   </Dialog>
+</core:FragmentDefinition>
+
+		<!-- <InputListItem label="High Performance">
+			<RadioButton
+				groupName="GroupInputListItem"
+				selected="true" />
+		</InputListItem>
+		<InputListItem label="Battery Saving">
+			<RadioButton
+				groupName="GroupInputListItem" />
+		</InputListItem> -->
+

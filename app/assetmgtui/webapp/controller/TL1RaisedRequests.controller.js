@@ -110,7 +110,7 @@ sap.ui.define([
                   data: JSON.stringify({ status: statusToUpdate }), // Pass the new status in the request body
                   success: function (data) {
                       // If the request is successful, fetch the updated HR requests
-                      that.fetchRequests(); // You may need to pass parameters here depending on your requirement
+                      that.fetchRequests(); 
                   },
                   error: function (jqXHR, textStatus, errorThrown) {
                       console.error("Error updating HR request status:", errorThrown);

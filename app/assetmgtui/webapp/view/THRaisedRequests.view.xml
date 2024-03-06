@@ -1,0 +1,53 @@
+
+<mvc:View controllerName="assetmgtui.controller.THRaisedRequests"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+				
+            <Table items="{thRequestsModel>/}" class="hover-table" headerText="RequestList">
+
+                <columns>
+                    
+                    <Column>
+                        <header>
+                            <Label text="Request ID"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Requested Item"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Quotation Description"></Label>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label text="Quotation Price"></Label>
+                        </header>
+                    </Column>
+                     <Column>
+                        <header>
+                            <Label text="Status"></Label>
+                        </header>
+                    </Column>
+                    
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Inherit">
+                        <cells>
+                            <Text text="{thRequestsModel>parentRequestID}"/>
+                            <Text text="{thRequestsModel>item}"/>
+                            <Text text="{thRequestsModel>quotationDescription}"/>
+                            <Text text="{='$ '+${thRequestsModel>quotationPrice}}"/>
+                            <Text text="{thRequestsModel>overallStatus}"/>
+
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+</mvc:View>
+

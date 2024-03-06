@@ -187,7 +187,9 @@ sap.ui.define(['sap/suite/ui/commons/library', 'sap/ui/core/mvc/Controller', 'sa
                         // Concatenate the existing data with the new data
                         var newData = existingNodes.concat(formattedData);
                         oModel.setProperty("/nodes", newData);
+                        oModel.setProperty("/VisbleProcessFlow", true);  // Setting already existing property in .json file to true
                         that.getView().setModel("locModel")
+
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         sap.m.MessageBox.error("Please enter the valid Request ID");

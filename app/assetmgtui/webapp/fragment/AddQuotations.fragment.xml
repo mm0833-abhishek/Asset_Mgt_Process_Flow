@@ -81,7 +81,12 @@
         id="addQuotation"
         title="Add Quotation">
         <VBox>
-            <Text text="Parent Request ID: {tl1ParticularRequestModel>/value/0/parentRequestID}" id="parentRequestIdText" class="sapUiMeduimMargin"/>
+            <!-- <Text text="Parent Request ID: {tl1ParticularRequestModel>/value/0/parentRequestID}" id="parentRequestIdText" class="sapUiMeduimMargin"/> -->
+            <Text text="Request ID: {tl2ParticularRequestModel>/value/0/parentRequestID}"
+                  id="parentRequestIdText" class="sapUiMeduimMargin"/>
+               <Text text="{= 'Status: ' + ${tl2ParticularRequestModel>/value/overallStatus}}"
+                  class="sapSubtitle"
+                  wrapping="true"/>
             <Table id="myTable" items="{path: '/rows'}">
                 <columns>
                     <Column>
@@ -97,7 +102,7 @@
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <Input value="{description}" />
+                            <Input maxLength="50" value="{description}" />
                             <Input value="{price}" />
                             <Button icon="sap-icon://delete" press="onRemoveRowPress" />
                         </cells>

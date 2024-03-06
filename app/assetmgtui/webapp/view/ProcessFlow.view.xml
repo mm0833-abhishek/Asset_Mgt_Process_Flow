@@ -22,7 +22,8 @@
 			foldedCorners="true"
 			nodePress="onNodePress"
 			nodes="{locModel>/nodes}"
-			lanes="{locModel>/lanes}">
+			lanes="{locModel>/lanes}"
+			visible="{locModel>/VisbleProcessFlow}">
 			<nodes>
 				<ProcessFlowNode
 					laneId="{locModel>lane}"

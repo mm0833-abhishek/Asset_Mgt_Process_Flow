@@ -25,6 +25,7 @@
          </List>
       </VBox>
       <HBox justifyContent="Center">
+         <Button text="Create New Quotation" type="Accept" press="openCreateQuotations" class="sapUiSmallMarginEnd"/>
          <Button text="Close" type="Default" press="onCloseFragment" class="sapUiSmallMarginEnd"/>
       </HBox>
    </Dialog>

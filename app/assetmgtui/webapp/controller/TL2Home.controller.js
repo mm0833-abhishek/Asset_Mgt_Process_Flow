@@ -25,6 +25,10 @@ sap.ui.define([
         return Controller.extend("assetmgtui.controller.TL2Home", {
             onInit: function () {
 
+            },
+            NavToTH: function(){
+                var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("THHome")
             }
         });
     });

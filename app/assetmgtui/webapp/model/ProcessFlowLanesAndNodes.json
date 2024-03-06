@@ -77,5 +77,6 @@
 			"label": "Finance",
 			"position": 4
 		}
-	]
+	],
+	"VisbleProcessFlow":false
 }

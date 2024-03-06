@@ -84,8 +84,8 @@ sap.ui.define([
                   $filter: "parentRequestID eq " + parentReqID
               },
               success: function(data) {
-                  var tl1ParticularRequestdata=data.value
-                  console.log(tl1ParticularRequestdata)
+                //   var tl1ParticularRequestdata=data.value
+                  //console.log(tl1ParticularRequestdata)
                   var jsonModel = new JSONModel(data);
                   that.getView().setModel(jsonModel, "tl1ParticularRequestModel");
                   that.getView().getModel("dataModel").setProperty("/TL2TL1SelectedDatas",data.value)
@@ -112,36 +112,37 @@ sap.ui.define([
   
   
         
-        RequestStatusUpdate: function (statusToUpdate) {
-                let url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/";
-                var that = this;
-               // var parentRequestID = '00000000-0000-0000-0000-000000000000'; // HR ID to filter requests
+        // RequestStatusUpdate: function (statusToUpdate) {
+        //         let url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/";
+        //         var that = this;
+        //        // var parentRequestID = '00000000-0000-0000-0000-000000000000'; // HR ID to filter requests
             
-                // Make an AJAX PATCH request to update the status
-                $.ajax({
-                    url: url +  hrReqID , // Append the hrReqID to the URL
-                    method: "PATCH", // Use PATCH method to update the existing record
-                    contentType: "application/json",
-                    data: JSON.stringify({ status: statusToUpdate }), // Pass the new status in the request body
-                    success: function (data) {
-                        // If the request is successful, fetch the updated HR requests
-                        that.fetchRequests(); // You may need to pass parameters here depending on your requirement
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        console.error("Error updating HR request status:", errorThrown);
-                    }
-                });
-            },
+        //         // Make an AJAX PATCH request to update the status
+        //         $.ajax({
+        //             url: url +  hrReqID , // Append the hrReqID to the URL
+        //             method: "PATCH", // Use PATCH method to update the existing record
+        //             contentType: "application/json",
+        //             data: JSON.stringify({ status: statusToUpdate }), // Pass the new status in the request body
+        //             success: function (data) {
+        //                 // If the request is successful, fetch the updated HR requests
+        //                 that.fetchRequests(); // You may need to pass parameters here depending on your requirement
+        //             },
+        //             error: function (jqXHR, textStatus, errorThrown) {
+        //                 console.error("Error updating HR request status:", errorThrown);
+        //             }
+        //         });
+        //     },
 
-            // onRejectPress: function(){
-            //     this.RequestStatusUpdate('Rejected');
-            // },
+            onRejectPress: function(){
+                this.RequestStatusUpdate('Rejected by Team Lead 2',"Request Rejected");
+            },
             
 
             // Assuming that the fragment is being opened and closed using methods like openFragment and closeFragment
 
-            onRejectPress: function () {
+            RequestStatusUpdate: function (status,message) {
                 let hrRequests=this.getView().getModel("dataModel").getProperty("/TL2TL1SelectedDatas");
+                console.log(hrRequests);
                 var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Request/";
                 var that = this;
                 let flag=null
@@ -149,7 +150,7 @@ sap.ui.define([
                 hrRequests.forEach(function(hrRequest) {
                 var request = {
                     hrRequestID: hrRequest.hrRequestID,
-                    status: 'Rejected by TeamLead 2'
+                    status: status
                 };
 
                 $.ajax({
@@ -170,7 +171,7 @@ sap.ui.define([
             });
             setTimeout(()=>{
                 if(flag){
-                    MessageBox.success("Request Rejected");
+                    MessageBox.success(message);
                     that.onCloseFragment();    
                     that.fetchRequests();
                 }
@@ -241,7 +242,56 @@ onRemoveRowPress: function(oEvent) {
     oModel.setProperty("/rows", aRows);
 },
 
-onSubmitPress: function() {
+// onSubmitPress:async function() {
+//     var oModel = this.getView().getModel();
+//     var aData = oModel.getProperty("/rows");
+//     var sParentRequestID = this.byId("requestIdText").getText().split(":")[1].trim(); // Extracting parentRequestID from the text
+
+//     // Prepare data for submission with parentRequestID included
+   
+//     var aQuotationData = aData.map(function(quotation) {
+//         return {
+//             "quotationDescription": quotation.description,
+//             "quotationPrice": quotation.price,
+//             "status": "false", // Assuming status is initially set to "false"
+//             "parentRequestID": sParentRequestID // Assigning the parentRequestID
+//         };
+//     });
+    
+//     let flag=0;
+//     var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Quotation"; // Adjust this URL according to your backend endpoint
+//     aQuotationData.forEach(function (arrayItem) {
+
+//         $.ajax({
+//             url: url , // Append the hrReqID to the URL
+//             method: "POST", // Use PATCH method to update the existing record
+//             contentType: "application/json",
+//             data: JSON.stringify(arrayItem), // Pass the new status in the request body
+//             success: function (data) {
+//                 flag++;
+//                 // If the request is successful, fetch the updated HR requests
+//                 // MessageBox.success("New Request Added"); // You may need to pass parameters here depending on your requirement
+//                 // this.onClosePress();
+//                 // this.onCloseFragment();
+//             },
+//             error: function (jqXHR, textStatus, errorThrown) {
+//                 flag--;
+//                 console.error("Error updating HR request status:", errorThrown);
+//             }
+//         });
+// })
+// if(flag==aQuotationData.length){
+//     this.onClosePress();
+//     this.onCloseFragment();
+//     MessageBox.success("Quotation Added Successfully"); 
+// }
+// else{
+//     MessageBox.error("Something went wrong"); 
+// }
+// },
+
+
+onSubmitPress: async function() {
     var oModel = this.getView().getModel();
     var aData = oModel.getProperty("/rows");
     var sParentRequestID = this.byId("requestIdText").getText().split(":")[1].trim(); // Extracting parentRequestID from the text
@@ -256,28 +306,45 @@ onSubmitPress: function() {
             "parentRequestID": sParentRequestID // Assigning the parentRequestID
         };
     });
-    
 
-    var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Quotation"; // Adjust this URL according to your backend endpoint
-    aQuotationData.forEach(function (arrayItem) {
+    try {
+        var flag = 0;
+        var url = this.getOwnerComponent().getModel("oDaModel").getServiceUrl() + "Quotation"; // Adjust this URL according to your backend endpoint
 
-        $.ajax({
-            url: url , // Append the hrReqID to the URL
-            method: "POST", // Use PATCH method to update the existing record
-            contentType: "application/json",
-            data: JSON.stringify(arrayItem), // Pass the new status in the request body
-            success: function (data) {
-                // If the request is successful, fetch the updated HR requests
-                // MessageBox.success("New Request Added"); // You may need to pass parameters here depending on your requirement
-                // this.onClosePress();
-                // this.onCloseFragment();
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error("Error updating HR request status:", errorThrown);
-            }
-        });
-})
+        for (const arrayItem of aQuotationData) {
+            await new Promise((resolve, reject) => {
+                $.ajax({
+                    url: url,
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(arrayItem),
+                    success: function(data) {
+                        flag++;
+                        resolve();
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        flag--;
+                        console.error("Error updating HR request status:", errorThrown);
+                        reject(errorThrown);
+                    }
+                });
+            });
+        }
+
+        if (flag === aQuotationData.length) {
+            this.RequestStatusUpdate('Progress with Team Head',"Quotation Added Successfully");
+            this.onClosePress();
+            this.onCloseFragment();
+            //MessageBox.success("Quotation Added Successfully");
+
+        } else {
+            MessageBox.error("Something went wrong");
+        }
+    } catch (error) {
+        MessageBox.error("Error occurred: " + error);
+    }
 },
+
 
 onClosePress: function() {
     this.byId("addQuotation").close();

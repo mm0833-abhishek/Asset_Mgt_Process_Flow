@@ -1,98 +1,115 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:m="sap.m"
+    controllerName="assetmgtui.controller.TL2Home"
+    height="100%"
+>
+    <ObjectPageLayout
+        id="ObjectPageLayout"
+        enableLazyLoading="true"
+        beforeNavigate="onBeforeNavigate"
+        useIconTabBar="true"
+        showTitleInHeaderContent="true"
+        upperCaseAnchorBar="false"
+        sectionChange="onSectionChange"
+    >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <expandedHeading>
+                    <m:Title
+                        text="Welcome TL2"
+                        wrapping="true"
+                    />
+                </expandedHeading>
 
-<mvc:View xmlns:mvc="sap.ui.core.mvc"
-		   xmlns="sap.uxap"
-		   xmlns:layout="sap.ui.layout"
-		   xmlns:m="sap.m"
-		   controllerName="assetmgtui.controller.TL2Home"
-		   height="100%">
-	<ObjectPageLayout id="ObjectPageLayout"
-		enableLazyLoading="true"
-		beforeNavigate="onBeforeNavigate"
-		useIconTabBar="true"
-		showTitleInHeaderContent="true"
-		upperCaseAnchorBar="false"
-		sectionChange="onSectionChange">
-		<headerTitle>
-			<ObjectPageDynamicHeaderTitle>
-			    
-				<expandedHeading>
-					<m:Title text="Welcome TL2" wrapping="true"/>
-				</expandedHeading>
+                <actions>
+                    <m:Button
+                        text="Create Request"
+                        type="Emphasized"
+                        press="onCreateTL1Request"
+                    />
+                </actions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
 
-				<actions>
-					<m:Button text="Create Request" type="Emphasized" press="onCreateTL1Request"/>
-					
-				</actions>
+        <headerContent>
+            <m:SearchField
+                width="12rem"
+                placeholder="Search"
+                search="onSearch"
+            />
+        </headerContent>
 
-				
-				
-			</ObjectPageDynamicHeaderTitle>
-		</headerTitle>
-
-
-		<headerContent>
-			<m:SearchField width="12rem" placeholder="Search" search="onSearch"/>
-		</headerContent>
-
-		<headerContent>
-					            <m:Bar>
+        <headerContent>
+            <m:Bar>
                 <m:contentRight>
-                    <m:Button text="Nav To TH" type="Emphasized" press="NavToTH"/>
+                    <m:Button
+                        text="Nav To TH"
+                        type="Emphasized"
+                        press="NavToTH"
+                    />
                 </m:contentRight>
             </m:Bar>
-					
-		</headerContent>
+        </headerContent>
 
+        <sections>
+            <ObjectPageSection
+                titleUppercase="false"
+                title="TL 1 Requests"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <mvc:XMLView
+                                viewName="assetmgtui.view.TL2TL1Requests"
+                            />
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
 
-		<sections>
-			<ObjectPageSection titleUppercase="false" title="TL 1 Requests">
-				<subSections>
-					<ObjectPageSubSection  titleUppercase="false">
-						<blocks>	
-							<mvc:XMLView viewName="assetmgtui.view.TL2TL1Requests"/>
-						</blocks>
-					</ObjectPageSubSection>
-				
-				</subSections>
-			</ObjectPageSection>
+            <ObjectPageSection
+                titleUppercase="false"
+                title="Created Requests"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <blocks>
+                            <mvc:XMLView
+                                viewName="assetmgtui.view.TL2RaisedRequests"
+                            />
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
 
+        <ObjectPageSection
+            titleUppercase="false"
+            title="Reverted Back Requests from TH"
+        >
+            <subSections>
+                <ObjectPageSubSection titleUppercase="false">
+                    <blocks>
+                        <mvc:XMLView viewName="assetmgtui.view.TL2RevertBackQuotations" />
+                    </blocks>
+                </ObjectPageSubSection>
+            </subSections>
+        </ObjectPageSection>
 
-			<ObjectPageSection titleUppercase="false"  title="Created Requests">
-				<subSections>
-					<ObjectPageSubSection  titleUppercase="false">
-						<blocks>
-							<mvc:XMLView viewName="assetmgtui.view.TL2RaisedRequests"/>
-						</blocks>
-					</ObjectPageSubSection>
-				
-				</subSections>
-
-				<subSections>
-					<ObjectPageSubSection  titleUppercase="false">
-						<blocks>
-							<m:Text text="heloi"/>
-						</blocks>
-					</ObjectPageSubSection>
-				</subSections>
-			</ObjectPageSection>
-		</sections>
-
-
-		<ObjectPageSection titleUppercase="false" title="Process Flow">
-				<subSections>
-					<ObjectPageSubSection  titleUppercase="false">
-						<blocks>	
-							<mvc:XMLView viewName="assetmgtui.view.ProcessFlow"/>
-						</blocks>
-					</ObjectPageSubSection>
-				
-				</subSections>
-			</ObjectPageSection>
-
-        
-	</ObjectPageLayout>
+        <ObjectPageSection
+            titleUppercase="false"
+            title="Process Flow"
+        >
+            <subSections>
+                <ObjectPageSubSection titleUppercase="false">
+                    <blocks>
+                        <mvc:XMLView viewName="assetmgtui.view.ProcessFlow" />
+                    </blocks>
+                </ObjectPageSubSection>
+            </subSections>
+        </ObjectPageSection>
+    </ObjectPageLayout>
 </mvc:View>
-
-
-
- 
